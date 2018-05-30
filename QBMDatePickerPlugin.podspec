@@ -28,8 +28,7 @@ Pod::Spec.new do |s|
   s.source_files  = "Source/**/*.{h,m,mm}"
 
   s.requires_arc = true
-  
-  s.dependency 'pod WeexSDK', '0.18'
+
   
   
 end
