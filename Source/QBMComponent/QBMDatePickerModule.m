@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "QBMDefine.h"
 #import "WXComponentManager.h"
-#import "WXConvert.h"
-#import "WXUtility.h"
 #import "QBMDatePickerView.h"
-
+#import "WXConvert.h"
 @interface QBMDatePickerModule()<QBMDatePickerViewDelegate>
 
 @property(nonatomic,copy)NSString *title;

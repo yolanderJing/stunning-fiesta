@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                   Testing private podspec,to verify availability
                    DESC
 
-  s.homepage     = "https://github.com/yolanderJing/stunning-fiesta.git"
+  s.homepage     = 'https://github.com/yolanderJing/stunning-fiesta'
 
   s.license      = "MIT"
 
@@ -21,9 +21,15 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
 
-  s.source       = { :git => "https://github.com/yolanderJing/stunning-fiesta.git", :tag => "#{s.version}" }
+  s.ios.deployment_target = "8.0"
+
+  s.source       = { :git => 'https://github.com/yolanderJing/stunning-fiesta.git', :tag => s.version }
 
   s.source_files  = "Source/**/*.{h,m,mm}"
 
   s.requires_arc = true
+  
+  s.dependency 'pod WeexSDK', '0.18'
+  
+  
 end
