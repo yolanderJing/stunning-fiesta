@@ -3,7 +3,7 @@
 //  WeexEros
 //
 //  Created by qbm_ios on 2018/5/24.
-//  Copyright © 2018年 qbm. All rights reserved.
+//  Copyright © 2018年 qbm Company. All rights reserved.
 
 
 #import "QBMDatePickerView.h"
@@ -121,7 +121,7 @@
     else{
         [titleLabel setTextColor:[QBMUtil colorWithHexString:@"#313131"]];
     }
-    [titleLabel setFont:[UIFont systemFontOfSize:14.0]];
+    [titleLabel setFont:[UIFont systemFontOfSize:15.0]];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self.contentView addSubview:titleLabel];
     
@@ -138,9 +138,9 @@
         [cancel setTitleColor:[QBMUtil  colorWithHexString:dict[@"cancelTitleColor"]] forState:UIControlStateNormal];
     }
     else{
-        [cancel setTitleColor:[QBMUtil  colorWithHexString:@"#0092ff"] forState:UIControlStateNormal];
+        [cancel setTitleColor:[QBMUtil  colorWithHexString:@"#00B4FF"] forState:UIControlStateNormal];
     }
-    cancel.titleLabel.font = [UIFont systemFontOfSize:16];
+    cancel.titleLabel.font = [UIFont systemFontOfSize:14];
     [cancel addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
     cancel.tag = 100;
     [self.contentView  addSubview:cancel];
@@ -158,10 +158,10 @@
         [confirm setTitleColor:[QBMUtil  colorWithHexString:dict[@"confirmTitleColor"]] forState:UIControlStateNormal];
     }
     else{
-        [confirm setTitleColor:[QBMUtil  colorWithHexString:@"#0092ff"] forState:UIControlStateNormal];
+        [confirm setTitleColor:[QBMUtil  colorWithHexString:@"#00B4FF"] forState:UIControlStateNormal];
     }
     
-    confirm.titleLabel.font = [UIFont systemFontOfSize:16];
+    confirm.titleLabel.font = [UIFont systemFontOfSize:14];
     [confirm addTarget:self action:@selector(completion) forControlEvents:UIControlEventTouchUpInside];
     confirm.tag = 200;
     [self.contentView addSubview:confirm];
@@ -169,6 +169,10 @@
     //标题。
     [self __initTitleView];
     
+    //分割线
+    UIView *lineView=[[UIView  alloc]initWithFrame:CGRectMake(0, 45-0.5, self.frame.size.width, 0.5)];
+    lineView.backgroundColor=[QBMUtil  colorWithHexString:@"#e5e5e5"];
+    [self.contentView  addSubview:lineView];
     //UIPickerView.
     datePickerView = [[UIPickerView alloc]init];
     datePickerView.backgroundColor = [UIColor whiteColor];
@@ -176,10 +180,10 @@
     datePickerView.delegate = self;
     datePickerView.dataSource = self;
     [self.contentView addSubview:datePickerView];
-//    //分割线
-//    UIView *beforeSepLine = [[UIView alloc] initWithFrame:CGRectMake(0, 39, self.frame.size.width, 1)];
-//    beforeSepLine.backgroundColor=[QBMUtil  colorWithHexString:@"#e5e5e5"];
-//    [self.contentView addSubview:beforeSepLine];
+    //    //分割线
+    //    UIView *beforeSepLine = [[UIView alloc] initWithFrame:CGRectMake(0, 39, self.frame.size.width, 1)];
+    //    beforeSepLine.backgroundColor=[QBMUtil  colorWithHexString:@"#e5e5e5"];
+    //    [self.contentView addSubview:beforeSepLine];
 }
 
 - (void)__initTitleView {
@@ -212,6 +216,8 @@
         UILabel *titleLabel = [[UILabel alloc]init];
         titleLabel.text = [titleArray objectAtIndex:i];
         titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.font=[UIFont systemFontOfSize:15];
+        titleLabel.textColor=[QBMUtil  colorWithHexString:@"#313131"];
         titleLabel.tag = QBMTITLE_LABEL_START_TAG + i;
         [self.contentView addSubview:titleLabel];
     }
@@ -769,11 +775,16 @@
             break;
     }
 }
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    
+    
+    return 44;
+}
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
     UILabel *pickerLabel = (UILabel *)view;
-    
+    pickerLabel.textColor=[QBMUtil colorWithHexString:@"#313131"];
     if (pickerLabel == nil) {
         CGFloat labelWidth = 0.0;
         switch (_datePickerViewShowModel) {
@@ -791,7 +802,7 @@
         pickerLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.0f, 0.0f, labelWidth, 30.0f)];
         pickerLabel.textAlignment = NSTextAlignmentCenter;
         pickerLabel.backgroundColor = [UIColor clearColor];
-        pickerLabel.font = [UIFont systemFontOfSize:16.0f];
+        pickerLabel.font = [UIFont systemFontOfSize:14];
     }
     
     switch (component) {
@@ -966,3 +977,5 @@
     [datePickerView reloadAllComponents];
 }
 @end
+
+
