@@ -138,7 +138,7 @@
         [cancel setTitleColor:[QBMUtil  colorWithHexString:dict[@"cancelTitleColor"]] forState:UIControlStateNormal];
     }
     else{
-        [cancel setTitleColor:[QBMUtil  colorWithHexString:@"#00B4FF"] forState:UIControlStateNormal];
+        [cancel setTitleColor:[QBMUtil  colorWithHexString:@"#313131"] forState:UIControlStateNormal];
     }
     cancel.titleLabel.font = [UIFont systemFontOfSize:14];
     [cancel addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];

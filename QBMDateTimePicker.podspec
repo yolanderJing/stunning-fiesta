@@ -5,9 +5,9 @@ Pod::Spec.new do |s|
 
 
 
-  s.name         = "QBMDatePickerPlugin"
+  s.name         = "QBMDateTimePicker"
   s.version      = "0.0.1"
-  s.summary      = "QBMDatePickerPlugin File"
+  s.summary      = "QBMDateTimePicker File"
 
   s.description  = <<-DESC
                   Testing private podspec,to verify availability
