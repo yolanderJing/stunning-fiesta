@@ -8,8 +8,8 @@ DerivedData/
 
 ## Various settings
 *.DS_Store
-*.pbxuser
-!default.pbxuser
+*.pbxuser         # 忽略所有 .pbxuser 结尾的文件
+!default.pbxuser  # 但 default.pbxuser除外
 *.mode1v3
 !default.mode1v3
 *.mode2v3
