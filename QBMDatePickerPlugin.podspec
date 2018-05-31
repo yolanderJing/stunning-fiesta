@@ -25,30 +25,30 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => 'https://github.com/yolanderJing/stunning-fiesta.git', :tag => s.version }
 
-  s.source_files  = "Source/**/*.{h,m,mm}"
+  #s.source_files  = "Source/*"
 
   s.requires_arc = true
 
   s.subspec 'QBMComponent' do |ss|
-    ss.source_files  = "Source/QBMComponent/*.{c,h,m,mm,S}"
+    ss.source_files  = "Source/QBMComponent/*.{h,m,mm}"
     ss.public_header_files = "QBMComponent/*.h"
     ss.requires_arc  = true
   end
 
   s.subspec 'QBMCustomUI' do |ss|
-    ss.source_files  = "Source/QBMCustomUI/*.{c,h,m,mm,S}"
+    ss.source_files  = "Source/QBMCustomUI/*.{h,m,mm}"
     ss.public_header_files = "QBMCustomUI/*.h"
     ss.requires_arc  = true
   end
 
   s.subspec 'QBMTool' do |ss|
-    ss.source_files  = "Source/QBMTool/*.{c,h,m,mm,S}"
+    ss.source_files  = "Source/QBMTool/*.{h,m,mm}"
     ss.public_header_files = "QBMTool/*.h"
     ss.requires_arc  = true
   end
 
   s.subspec 'QBMDefine' do |ss|
-    ss.source_files  = "Source/QBMDefine/*.{c,h,m,mm,S}"
+    ss.source_files  = "Source/QBMDefine/*.{h,m,mm}"
     ss.public_header_files = "QBMDefine/*.h"
     ss.requires_arc  = true
   end
